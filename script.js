@@ -1,24 +1,12 @@
-/*При кліку на кнопку 1 збільшувати лічильник на 1*/
+let duck = document.querySelector('.duck');
+let i = 0;
 
-let count = document.getElementById('count');
+document.onclick = function () {
+    duck.style.left = duck.offsetLeft - 10 + 'px';
 
-function btnClick() {
-    count.innerText++;
-    console.log(count.innerText);
+    if (i > 2) {
+        i = 0;
+    }
+    duck.style.backgroundImage = `url(assets/images/duck/black/left/${i++}.png)`;
+
 }
-
-/*При кліку на кнопку 2 змітини колір тексту параграфа на червоний;*/
-let btn2 = document.getElementById('btn2');
-
-btn2.onclick = function () {
-    let p2 = document.getElementById('p2');
-    p2.style.color = 'red';
-};
-
-/*При кліку на кнопку 3 відтворити аудіо "assets/sounds/gunSound.mp3"*/
-let btn3 = document.getElementById('btn3');
-
-btn3.onclick = function () {
-    let audioGun = document.getElementById('audioGun');
-    audioGun.play()
-};
